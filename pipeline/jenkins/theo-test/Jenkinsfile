@@ -1,9 +1,7 @@
 node {
-    dir('jenkins') {
+    dir('jenkins-test') {
         git url: 'https://github.com/theocincotta/jenkins.git'
     }
 
-    sh('ls')
-    sh('ls jenkins/pipeline/jenkins/theo-test/build.sh')
     sh('bash jenkins/pipeline/jenkins/theo-test/build.sh')
 }
