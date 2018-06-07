@@ -5,5 +5,5 @@ node {
 
     sh('ls')
     sh('ls jenkins')
-    sh('bash ./pipeline/jenkins/theo-test/build.sh')
+    sh('bash ./jenkins/theo-test/build.sh')
 }
