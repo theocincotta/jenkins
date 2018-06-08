@@ -1,4 +1,5 @@
 node {
+    checkout scm
     dir('jenkins-github-test') {
         git url: 'https://github.com/theocincotta/jenkins.git'
     }
@@ -6,7 +7,7 @@ node {
 
 pipeline {
     agent {
-        label 'ubuntu'
+        label any
     }
 
     stages {
