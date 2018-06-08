@@ -1,7 +1,20 @@
 node {
-    dir('jenkins-test') {
+    dir('jenkins-github-test') {
         git url: 'https://github.com/theocincotta/jenkins.git'
     }
-
-    sh('bash jenkins/pipeline/jenkins/theo-test/build.sh')
 }
+
+pipeline {
+    agent {
+        label 'ubuntu'
+    }
+
+    stages {
+        stage('build') {
+            steps {
+                sh('bash jenkins/pipeline/jenkins/theo-test/build.sh')
+            }
+        }
+    }
+}
+
